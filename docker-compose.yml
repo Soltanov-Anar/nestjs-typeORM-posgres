@@ -14,4 +14,4 @@ services:
       - ./pgdata:/var/lib/postgresql/data
 
     ports:
-      - ${TYPEORM_PORT}: ${TYPEORM_PORT}
+      - ${TYPEORM_PORT}:${TYPEORM_PORT}
