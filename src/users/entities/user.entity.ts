@@ -7,6 +7,8 @@ import {
 } from "typeorm"
 import { Field, ID, ObjectType } from "@nestjs/graphql"
 
+enum Gender { MALE, FEMALE }
+
 @ObjectType()
 @Entity({ name: "users" })
 export class UserEntity {
@@ -29,4 +31,8 @@ export class UserEntity {
   @Field({ nullable: true })
   @Column({ nullable: true })
   name: string
+
+  @Field({ nullable: true })
+  @Column({ name: "enum", enum: Gender, nullable: true })
+  gender: string
 }
